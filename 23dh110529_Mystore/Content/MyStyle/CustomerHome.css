@@ -1,0 +1,125 @@
+﻿.banner {
+    background-image: url('../../content/image/iphone15promax.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content {
+    text-align: center;
+    color: red;
+}
+
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+
+.banner-content {
+    font-size: 1.2rem;
+}
+
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+.btn {
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: darkslategrey;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.banner-content a {
+    font-size: 30px;
+}
+
+#featurePr {
+    text-align: center;
+    margin-top: 10px;
+}
+
+    #featurePr h2 {
+        font-size: 2rem;
+    }
+
+.prodContainer {
+    margin-top: 15px;
+}
+
+.prodContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.product-item {
+    width: 200px;
+}
+
+    .product-item img {
+        max-width: 180px;
+    }
+
+.prodDes {
+    font: arial;
+    font-size: 10px;
+    color: cornflowerblue;
+}
+
+.product-item h3 {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.prodPrice {
+    font-size: 10px;
+    color: darkred;
+}
+
+.search-section {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.search-section {
+    font-size: 27px;
+    margin-bottom: 23px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-input {
+    width: 700px;
+    padding: 10px;
+    border: 1px solid #808080;
+    border-radius: 5px 0 0 5px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    color: black;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+    #search-button:hover {
+        background-color: #555;
+    }
+
+.search-section, .content-section {
+    margin: 0;
+    padding: 0;
+}

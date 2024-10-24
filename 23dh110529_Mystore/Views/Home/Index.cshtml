@@ -1,0 +1,29 @@
+﻿@model _23dh110529_Mystore.Models.ViewModel.HomeProductVM
+@{
+    ViewBag.Title = "Customer Home Page";
+    <link type="text/css" href="~/Content/MyStyle/CustomerHome.css" rel="stylesheet" />
+}
+
+@* Phần Banner *@
+<section class="container-fluid banner">
+    <div class="banner-content">
+        <h1 style="color:ghostwhite;">  Welcome to apple store online  </h1>
+        <p>   apple store sẽ đến VietNam:) </p>
+        <a href="#" class="btn"> Find more  </a>
+    </div>
+</section>
+@* Phần tìm kiếm *@
+<section class="container-fluid searchPrd ">
+    <h2>Tìm kiếm sản phẩm</h2>
+             @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+                         <div class="search-container">
+                             @Html.TextBoxFor(m => m.SearchTerm, new
+                                 {
+                                 @class = "search-input",
+                                     placeholder = "Nhập tên, mô tả hoặc chủng loại sản phẩm"
+                                 })
+                                 <button type="submit" class="search-button">Tìm kiếm </button>
+                           </div>
+    }
+</section>

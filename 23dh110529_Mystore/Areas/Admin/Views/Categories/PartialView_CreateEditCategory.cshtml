@@ -1,0 +1,33 @@
+﻿@* sẽ được truyền vào giữa PV và trang cha *@
+@model _23dh110529_Mystore.Models.Category
+@* Form con sẽ đc nhúng vào form cha là edit và create *@
+<div class="form-group">
+    @*@Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+    @*<div class="control-label  col-md-2">Tên danh mục </div>
+         <div class="col-lg-10">
+       
+        
+         </div>*@
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+        Tên danh mục
+    </dt>
+    @* giá trị của trường CategoryName  *@
+<dd class="col-sm-2">
+    @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control" } })
+
+</dd>
+
+</dl>
+
+
+
+<div class="form-group">
+    <div class="col-lg-80 col-md-100">
+        <input type="submit" value="Lưu" class="btn btn-primary btn-sm" />
+        @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = " btn btn-primary btn-sm" })
+    </div>
+</div>
