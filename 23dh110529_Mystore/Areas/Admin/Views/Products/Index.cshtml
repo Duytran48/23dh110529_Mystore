@@ -4,7 +4,7 @@
     ViewBag.Title = "Search Product";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 <html>
 
     <head>
@@ -27,17 +27,17 @@
         {
             <div class="form-group search-container">
                 @Html.TextBoxFor(m => m.SearchTerm, new
-            {
-               @class = "form-control",
-               placeholder = "Nhập tên,mô tả hoặc chủng loại sản phẩm"
-            })
+                {
+                    @class = "form-control",
+                    placeholder = "Nhập tên,mô tả hoặc chủng loại sản phẩm"
+                })
 
                 @Html.TextBoxFor(m => m.Minprice, new
                 {
                     @class = "form-control",
                     placeholder = "Nhập giá tối thiểu",
                     type = "number"
-                 })
+                })
                 @Html.TextBoxFor(m => m.Maxprice, new
                 {
                     @class = "form-control",
@@ -49,42 +49,42 @@
             </div>
         }
 
-    <div class="form-group search-container">
-        Sắp xếp theo:
-        @Html.ActionLink("Tên tăng dần", "Index", "Products", new
-        {
-            sortOrder = "name_asc",
-            searchTerm = Model.SearchTerm,
-            minPrice = Model.Minprice,
-            maxPrice = Model.Maxprice
-        }, null)   |
+        <div class="form-group search-container">
+            Sắp xếp theo:
+            @Html.ActionLink("Tên tăng dần", "Index", "Products", new
+            {
+                sortOrder = "name_asc",
+                searchTerm = Model.SearchTerm,
+                minPrice = Model.Minprice,
+                maxPrice = Model.Maxprice
+            }, null)   |
 
-        @Html.ActionLink("Tên giảm dần", "Index", "Products", new
-         {
+            @Html.ActionLink("Tên giảm dần", "Index", "Products", new
+            {
                 sortOrder = "name_desc",
                 searchTerm = Model.SearchTerm,
                 minPrice = Model.Minprice,
                 maxPrice = Model.Maxprice
-         }, null)   |
-        @Html.ActionLink("Giá tăng dần", "Index", "Products", new
+            }, null)   |
+            @Html.ActionLink("Giá tăng dần", "Index", "Products", new
             {
                 sortOrder = "price_asc",
                 searchTerm = Model.SearchTerm,
                 minPrice = Model.Minprice,
                 maxPrice = Model.Maxprice
             }, null)   |
-        @Html.ActionLink("Giá giảm dần", "Index", "Products", new
+            @Html.ActionLink("Giá giảm dần", "Index", "Products", new
             {
-                    sortOrder = "price_desc",
-                    searchTerm = Model.SearchTerm,
-                    minPrice = Model.Minprice,
-                    maxPrice = Model.Maxprice
+                sortOrder = "price_desc",
+                searchTerm = Model.SearchTerm,
+                minPrice = Model.Minprice,
+                maxPrice = Model.Maxprice
             }, null)
-       
-    </div>
-            @* Form kq tìm kiếm *@
-            @Html.Partial("PVListProduct", Model)
-        </body>
+
+        </div>
+        @* Form kq tìm kiếm *@
+        @Html.Partial("PVListProduct", Model)
+    </body>
 
 </html>
 

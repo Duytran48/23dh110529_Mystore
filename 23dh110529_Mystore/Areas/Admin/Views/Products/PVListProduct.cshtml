@@ -6,10 +6,6 @@
             height: 300px;
             max-width: 400px;
         }
-        .pagination-container{
-           
-
-        }
     </style>
 </head>
 @if (Model.Products != null && Model.Products.Any())
@@ -89,18 +85,16 @@
         sortOrder = Model.SortOrder, 
     }))
 </div>
-
-
-
-    <div class="row">
-        <div class="col-md-7 ms-auto">
-            @Html.ActionLink("Thêm cái mới", "Create", null, new { @class = " btn btn-primary" })
-        </div>
-    </div>
+    
 }
 else
 {
     <p> Product Not Found !! </p>
 }
+<div class="row">
+    <div class="col-md-7 ms-auto">
+        @Html.ActionLink("Thêm cái mới", "Create", null, new { @class = " btn btn-primary" })
+    </div>
+</div>
 
 

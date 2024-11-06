@@ -1,0 +1,35 @@
+﻿@model _23dh110529_Mystore.Models.ViewModel.HomeProductVM
+@{
+    ViewBag.Title = " Home Page";
+    
+    <link type="text/css" href="~/Content/MyStyle/CustomerHome.css" rel="stylesheet" />
+}
+
+@* Phần Banner *@
+<section class="bn">
+    <div class="banner-content">
+        <h1>  Welcome to My store online  </h1>
+        <p>   Buy whatever you want </p>
+        <a href="#" class="btn"> Find more  </a>
+    </div>
+</section>
+@* Phần tìm kiếm *@
+<section class="searchPd ">
+    <h2>Tìm kiếm sản phẩm</h2>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <div class="search-container">
+            @Html.TextBoxFor(m => m.SearchTerm, new
+                {
+                @class = "search-input",
+                    placeholder = "Nhập tên, mô tả hoặc chủng loại sản phẩm"
+                })
+            <button type="submit" class="search-button">Tìm kiếm </button>
+        </div>
+    }
+</section>
+<hr>
+@* Phẩn sản phẩm nổi bật *@
+@Html.Partial("_PVFeaturedProduct", Model)
+@* Phẩn sản phẩm Mới *@
+@Html.Partial("_PVNewProduct", Model)

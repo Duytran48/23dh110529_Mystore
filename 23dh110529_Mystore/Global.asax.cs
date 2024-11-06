@@ -15,7 +15,8 @@ namespace _23dh110529_Mystore
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);  
         }
     }
+
 }

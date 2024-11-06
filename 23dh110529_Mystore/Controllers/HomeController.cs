@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using _23dh110529_Mystore.Models;
@@ -14,7 +15,7 @@ namespace _23dh110529_Mystore.Controllers
         private MyStoreEntities db = new MyStoreEntities();
         //GET:  Admin/Products
 
-        public ActionResult Index(string searchTerm, int? page)
+        public ActionResult Trangchu(string searchTerm, int? page)
         {
             var model = new HomeProductVM();
             var products = db.Products.AsQueryable();
@@ -38,27 +39,33 @@ namespace _23dh110529_Mystore.Controllers
             model.NewProducts=products.OrderBy(p => p.OrderDetails.Count()).Take(20).ToPagedList(pageNumber,pageSize);
             return View(model);
         }
-
-
-
-
-        //    public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
-        public ActionResult About()
+        //Get Home/ProductDetails
+            public ActionResult ProductDetail(int? id,int? quantity,int?page)
         {
-            ViewBag.Message = "Your application description page.";
+                if (id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest );                
+            }
+            Product pro = db.Products.Find(id);
+            if (pro == null)
+            {
+                return HttpNotFound();
+            }
+            //lay tat ca san pham cung danh muc
+            var products = db.Products.Where(p => p.CategoryID == pro.CategoryID && p.ProductID != pro.ProductID).AsQueryable();
 
-            return View();
+            ProductDetailVM model = new ProductDetailVM();
+
+            //Doan code lien quan toi phan trang
+            //lay so trang hien tai mac dinh(mac dinh la 1 neu ko co gia tri)
+            int pageNumber = page ?? 1;
+            int pageSize = model.PageSize; //so san pham moi trang
+            model.Product = pro;
+            model.RelatedProducts = (List<Product>)products.OrderBy(p => p.ProductID).Take(8).ToPagedList(pageNumber, pageSize);
+
+
+
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        
     }
 }

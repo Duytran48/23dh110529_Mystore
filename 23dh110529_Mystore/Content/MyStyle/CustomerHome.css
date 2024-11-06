@@ -1,55 +1,85 @@
-﻿.banner {
-    background-image: url('../../content/image/iphone15promax.png');
-    background-size: cover;
+﻿.bn {
+    background-image: url('../image/taphoa.png');
+  /*  background-repeat: no-repeat;*/
     background-position: center;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 300px;
 }
 
 .banner-content {
     text-align: center;
-    color: red;
+    color: yellow;
 }
 
     .banner-content h1 {
         font-size: 2.5rem;
+        color:powderblue;
+        background-color:white;
     }
-
-.banner-content {
-    font-size: 1.2rem;
-}
-
     .banner-content p {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
 .btn {
     display: inline-block;
     padding: 5px 20px;
-    background-color: darkslategrey;
+    background-color: orange;
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-.banner-content a {
+.banner-content  {
     font-size: 30px;
 }
 
-#featurePr {
+.feature-Prod {
     text-align: center;
     margin-top: 10px;
 }
 
-    #featurePr h2 {
+    .feature-Prod h2 {
         font-size: 2rem;
+        margin-bottom: 20px;
+        color: lightpink;
     }
-
-.prodContainer {
-    margin-top: 15px;
+.feature-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
+.fproduct-item {
+    width: 300px;
+    max-height: 400px;
+    margin: 10px;
+    gap: 20px;
+    flex: 0 0 auto;
+    scroll-snap-align:start;
+    border:solid 1px pink;
+    border-radius:2px ;
+}
+.fproduct-item p {
+    font-size:1.5rem;
+}
+.fproduct-item,.prodPrice{
+    color:orangered;
+}
+.fproduct-item{
+    color:deepskyblue;
+}
+
+    .fproduct-item img{
+        padding:15px;
+        max-height:160px;
+        vertical-align:central;
+        background-color: transparent;
+    }
+ /*   .prodContainer {
+        margin-top: 15px;
+    }
 
 .prodContainer {
     display: flex;
@@ -61,7 +91,7 @@
     width: 200px;
 }
 
-    .product-item img {
+   .prodContainer{
         max-width: 180px;
     }
 
@@ -79,47 +109,5 @@
 .prodPrice {
     font-size: 10px;
     color: darkred;
-}
+}*/
 
-.search-section {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.search-section {
-    font-size: 27px;
-    margin-bottom: 23px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#search-input {
-    width: 700px;
-    padding: 10px;
-    border: 1px solid #808080;
-    border-radius: 5px 0 0 5px;
-}
-
-#search-button {
-    padding: 10px 20px;
-    background-color: cornflowerblue;
-    color: black;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
-
-    #search-button:hover {
-        background-color: #555;
-    }
-
-.search-section, .content-section {
-    margin: 0;
-    padding: 0;
-}
