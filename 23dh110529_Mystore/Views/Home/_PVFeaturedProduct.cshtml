@@ -4,7 +4,7 @@
 }
 @if (Model.FeaturedProducts != null && Model.FeaturedProducts.Any())
 {
-     <section  class="container-fluid feature-Prod" >
+     <section  class="@*container-fluid*@ feature-Prod" >
         <h2> Spham  nổi bật  </h2>
          <div class="feature-container">
              @foreach (var product in Model.FeaturedProducts)
@@ -17,9 +17,9 @@
                              </div>
 
                                    <div>
-                                        <p class="prodPrice"> @Html.DisplayFor(modelItem => product.ProductPrice) </p>
-                                           <p class="prodName"> @Html.DisplayFor(modelItem => product.ProductName) </p>
-                                            <p class="prodCate"> @Html.DisplayFor(modelItem => product.Category.CategoryName) </p>
+                                        <p class="prodPrice"> @product.ProductPrice</p>
+                                           <p class="prodName"> @product.ProductName </p>
+                                            @*<p class="prodCate"> @Html.DisplayFor(modelItem => product.Category.CategoryName) </p>*@
                                                 <p class="prodSale">
                                                     Đã bán: &nbsp;
                                                      @Html.DisplayFor(modelItem => product.OrderDetails.Count)
