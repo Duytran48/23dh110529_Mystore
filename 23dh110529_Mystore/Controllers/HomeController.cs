@@ -26,7 +26,7 @@ namespace _23dh110529_Mystore.Controllers
                 products = products.Where(p =>
                 p.ProductName.Contains(searchTerm) ||
                 p.ProductDescription.Contains(searchTerm) ||
-                p.Category.CategoryName.Contains(searchTerm));
+                p.Category.CategoryName.Contains(searchTerm) );
             }
             //Đoạn code liên quan tới phân trang
             //Lấy số trang hiện tại (mặc địng là trang 1 nếu ko có giá trị)
@@ -41,31 +41,34 @@ namespace _23dh110529_Mystore.Controllers
         }
         //Get Home/ProductDetails
             public ActionResult ProductDetail(int? id,int? quantity,int?page)
-        {
+             {
                 if (id==null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest );                
-            }
-            Product pro = db.Products.Find(id);
-            if (pro == null)
-            {
-                return HttpNotFound();
-            }
-            //lay tat ca san pham cung danh muc
-            var products = db.Products.Where(p => p.CategoryID == pro.CategoryID && p.ProductID != pro.ProductID).AsQueryable();
+                {
+                   return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                        Product pro = db.Products.Find(id);
+                        if (pro == null)
+                        {
+                                 return HttpNotFound();
+                         }
+                             //lay tat ca san pham cung danh muc
+                            var products = db.Products.Where(p => p.CategoryID == pro.CategoryID && p.ProductID != pro.ProductID).AsQueryable();
 
-            ProductDetailVM model = new ProductDetailVM();
+                         ProductDetailVM model = new ProductDetailVM();
 
-            //Doan code lien quan toi phan trang
-            //lay so trang hien tai mac dinh(mac dinh la 1 neu ko co gia tri)
-            int pageNumber = page ?? 1;
-            int pageSize = model.PageSize; //so san pham moi trang
-            model.Product = pro;
-            model.RelatedProducts = (List<Product>)products.OrderBy(p => p.ProductID).Take(8).ToPagedList(pageNumber, pageSize);
+                    //Doan code lien quan toi phan trang
+                    //lay so trang hien tai mac dinh(mac dinh la 1 neu ko co gia tri)
+                            int pageNumber = page ?? 1;
+                         int pageSize = model.PageSize; //so san pham moi trang
+                             model.Product = pro;
+                                model.RelatedProducts = products.OrderBy(p => p.ProductID).Take(8).ToList();
+                                model.TopProducts = products.OrderByDescending(p => p.OrderDetails.Count()).Take(8).ToPagedList(pageNumber, pageSize);
 
-
-
-        }
-        
+                    if(quantity.HasValue)
+                    {
+                            model.quantity = quantity.Value;
+                    }
+                    return View(model); 
+             }
     }
 }

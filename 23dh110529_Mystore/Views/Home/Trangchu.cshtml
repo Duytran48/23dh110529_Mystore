@@ -1,8 +1,9 @@
 ﻿@model _23dh110529_Mystore.Models.ViewModel.HomeProductVM
 @{
     ViewBag.Title = " Home Page";
-    
+
     <link type="text/css" href="~/Content/MyStyle/CustomerHome.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 }
 
 @* Phần Banner *@
@@ -15,7 +16,7 @@
 </section>
 @* Phần tìm kiếm *@
 <section class="searchPd ">
-    <h2>Tìm kiếm sản phẩm</h2>
+    <h2>Tìm kiếm sản phẩm </h2>
     @using (Html.BeginForm("Index", "Home", FormMethod.Get))
     {
         <div class="search-container">

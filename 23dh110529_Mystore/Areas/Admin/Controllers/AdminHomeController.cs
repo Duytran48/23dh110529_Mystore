@@ -9,7 +9,7 @@ namespace _23dh110529_Mystore.Areas.Admin.Controllers
     public class AdminHomeController : Controller
     {
         // GET: Admin/Home
-        public ActionResult Index()
+        public ActionResult AdminHomePage()
         {
             return View();
         }

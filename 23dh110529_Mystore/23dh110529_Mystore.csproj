@@ -202,8 +202,8 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Image\taphoa.png" />
+    <Content Include="Content\MyStyle\CustomerDetailProduct.css" />
     <Content Include="Content\MyStyle\CustomerHome.css" />
-    <Content Include="Content\MyStyle\Style_newpro.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -232,7 +232,6 @@
       <DependentUpon>MyStoreModel1.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
@@ -248,6 +247,7 @@
     <Content Include="Areas\Admin\Views\Products\PVCCreateEditProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Products\PVDProductInfo.cshtml" />
     <Content Include="Areas\Admin\Views\Products\PVListProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\AdminHomePage.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -276,11 +276,12 @@
     <Content Include="Views\Home\_PVFeaturedProduct.cshtml" />
     <Content Include="Views\Home\_PVNewProduct.cshtml" />
     <Content Include="Views\Home\ProductDetail.cshtml" />
+    <Content Include="Views\Home\_PVTopProdcut.cshtml" />
+    <Content Include="Views\Home\_PVRelatedProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Views\ProductDetailsVM\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

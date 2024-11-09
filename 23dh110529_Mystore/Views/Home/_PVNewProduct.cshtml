@@ -1,15 +1,103 @@
 ﻿@model _23dh110529_Mystore.Models.ViewModel.HomeProductVM
- @using PagedList.Mvc
+@using PagedList.Mvc
 @{
-    <link  href="~/Content/MyStyle/Style_newpro.css" rel="stylesheet" />
 }
 <head>
     <style>
+        .search-container {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 0;
+        }
 
+        .search-input {
+            width: 500px;
+            padding: 15px;
+            border: 2px solid deepskyblue;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            background-color: cornflowerblue;
+            color: black;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            /* width:100px;*/
+        }
+
+        .searchPd {
+            text-align: center;
+        }
+
+            .searchPd h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: brown;
+            }
+
+        .search-button:hover {
+            background-color: #555;
+        }
+
+        .listProduct {
+            text-align: center;
+        }
+
+        .list-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(100px,1fr) );
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            text-align: center;
+        }
+
+        .lproduct-item {
+            max-height: 500px;
+            border: solid 1px green;
+            border-radius: 2px;
+        }
+
+            .lproduct-item img {
+                max-height: 120px;
+                padding: 15px;
+                vertical-align: central;
+                background-color: transparent;
+            }
+
+        .prodPrice {
+            font-size: large;
+            color: blue;
+            font-weight: bolder;
+            padding: 10px 5px 0px 5px;
+        }
+
+        .prodName {
+            color: skyblue;
+            font-weight: bold;
+            padding: 0px 5px 0px 5px;
+            font-size:larger;
+        }
+
+        .prodCate {
+            color: royalblue;
+            padding: 0px 5px 0px 5px;
+            font-size: larger;
+        }
+
+        .prodSale {
+            font-size: large;
+            color: palevioletred;
+            padding: 0px 5px 0px 5px;
+        }
     </style>
 </head>
 @* Hiển thị danh sách sản phẩm *@
-he
 @if (Model.NewProducts != null && Model.NewProducts.Any())
 {
     <section class="listProduct">
@@ -38,15 +126,15 @@ he
         </ul>
     </section>
     //Hiển thị phân trang
-            <div class="pagination-container">
-                     @Html.PagedListPager(Model.NewProducts, page => Url.Action("Index", new
-                {
-                    page,
-                    searchTerm = Model.SearchTerm
-                } ))
-        </div>
-    }
-        else
-        {
-            <p> Không tìm thấy sản phẩm phù hợp. </p>
-        }
+    <div class="pagination-container">
+        @Html.PagedListPager(Model.NewProducts, page => Url.Action("Index", new
+   {
+       page,
+       searchTerm = Model.SearchTerm
+   }))
+    </div>
+}
+else
+{
+    <p> Không tìm thấy sản phẩm phù hợp. </p>
+}

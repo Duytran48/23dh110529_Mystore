@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Web;
+using PagedList.Mvc;
 
 namespace _23dh110529_Mystore.Models.ViewModel
 {
@@ -11,7 +12,7 @@ namespace _23dh110529_Mystore.Models.ViewModel
         public Product Product { get; set; }
         public int quantity { get; set; }
         //tinh gia tri tam thoi
-        public decimal estimated => quantity * Product.ProductPrice;
+        public decimal estimatedValue => quantity * Product.ProductPrice;
         //cac thuoc tinh ho tro phan trang
         public int Pagenumber { get; set; }//trang hien tai
         public int PageSize { get; set; } = 3;//so spham moi trang

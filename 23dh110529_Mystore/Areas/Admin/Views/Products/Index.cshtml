@@ -27,23 +27,23 @@
         {
             <div class="form-group search-container">
                 @Html.TextBoxFor(m => m.SearchTerm, new
-                {
-                    @class = "form-control",
-                    placeholder = "Nhập tên,mô tả hoặc chủng loại sản phẩm"
-                })
+           {
+               @class = "form-control",
+               placeholder = "Nhập tên,mô tả hoặc chủng loại sản phẩm"
+           })
 
                 @Html.TextBoxFor(m => m.Minprice, new
-                {
-                    @class = "form-control",
-                    placeholder = "Nhập giá tối thiểu",
-                    type = "number"
-                })
+           {
+               @class = "form-control",
+               placeholder = "Nhập giá tối thiểu",
+               type = "number"
+           })
                 @Html.TextBoxFor(m => m.Maxprice, new
-                {
-                    @class = "form-control",
-                    placeholder = "Nhập giá tối đa",
-                    type = "number"
-                })
+           {
+               @class = "form-control",
+               placeholder = "Nhập giá tối đa",
+               type = "number"
+           })
 
                 |<button type="submit" class="btn btn-primary">Search</button>
             </div>
@@ -52,27 +52,27 @@
         <div class="form-group search-container">
             Sắp xếp theo:
             @Html.ActionLink("Tên tăng dần", "Index", "Products", new
-            {
-                sortOrder = "name_asc",
-                searchTerm = Model.SearchTerm,
-                minPrice = Model.Minprice,
-                maxPrice = Model.Maxprice
-            }, null)   |
+       {
+           sortOrder = "name_asc",
+           searchTerm = Model.SearchTerm,
+           minPrice = Model.Minprice,
+           maxPrice = Model.Maxprice
+       }, null)   |
 
             @Html.ActionLink("Tên giảm dần", "Index", "Products", new
-            {
-                sortOrder = "name_desc",
-                searchTerm = Model.SearchTerm,
-                minPrice = Model.Minprice,
-                maxPrice = Model.Maxprice
-            }, null)   |
+       {
+           sortOrder = "name_desc",
+           searchTerm = Model.SearchTerm,
+           minPrice = Model.Minprice,
+           maxPrice = Model.Maxprice,
+       }, null )   |
             @Html.ActionLink("Giá tăng dần", "Index", "Products", new
-            {
-                sortOrder = "price_asc",
-                searchTerm = Model.SearchTerm,
-                minPrice = Model.Minprice,
-                maxPrice = Model.Maxprice
-            }, null)   |
+       {
+           sortOrder = "price_asc",
+           searchTerm = Model.SearchTerm,
+           minPrice = Model.Minprice,
+           maxPrice = Model.Maxprice
+       }, null)   |
             @Html.ActionLink("Giá giảm dần", "Index", "Products", new
             {
                 sortOrder = "price_desc",

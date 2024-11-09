@@ -1,0 +1,27 @@
+﻿.pro {
+    padding: 50px 10px 50px 10px;
+    background-color: azure;
+    text-align: center;
+}
+.pro-section{
+    background-color:whitesmoke;
+    border:1px groove #808080;
+    border-radius:10px;
+    margin:10px;
+    text-align:center;
+   
+}
+    .pro-section img {
+        max-height: 250px;
+        max-width: 200px;
+        padding: 15px;
+        vertical-align: central;
+    }
+.pro-price{
+    font-weight:bolder;
+    font-size:larger;
+    color:lightgreen;
+}
+.pro-sale{
+    font-weight:lighter;
+}

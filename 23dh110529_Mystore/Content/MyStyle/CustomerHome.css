@@ -35,6 +35,43 @@
 .banner-content  {
     font-size: 30px;
 }
+.search-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.search-input {
+    width: 500px;
+    padding: 15px;
+    border: 2px solid deepskyblue;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    color: black;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    /* width:100px;*/
+}
+
+.searchPd {
+    text-align: center;
+}
+
+    .searchPd h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: brown;
+    }
+
+.search-button:hover {
+    background-color: #555;
+}
 
 .feature-Prod {
     text-align: center;
@@ -77,37 +114,51 @@
         vertical-align:central;
         background-color: transparent;
     }
- /*   .prodContainer {
-        margin-top: 15px;
-    }
-
-.prodContainer {
-    display: flex;
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr) );
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
 }
 
-.product-item {
-    width: 200px;
+.lproduct-item {
+    max-height: 500px;
+    border: solid 1px green;
+    border-radius: 2px;
 }
 
-   .prodContainer{
-        max-width: 180px;
+    .lproduct-item img {
+        max-height: 120px;
+        padding: 15px;
+        vertical-align: central;
+        background-color: transparent;
     }
-
-.prodDes {
-    font: arial;
-    font-size: 10px;
-    color: cornflowerblue;
-}
-
-.product-item h3 {
-    font-size: 14px;
-    margin: 10px 0;
-}
 
 .prodPrice {
-    font-size: 10px;
-    color: darkred;
-}*/
+    font-size: large;
+    color: blue;
+    font-weight: bolder;
+    padding: 10px 5px 0px 5px;
+}
 
+.prodName {
+    color: skyblue;
+    font-weight: bold;
+    padding: 0px 5px 0px 5px;
+}
+
+.prodCate {
+    color: royalblue;
+    padding: 0px 5px 0px 5px;
+    font-size: larger;
+}
+
+.prodSale {
+    font-size: small;
+    color: palevioletred;
+    padding: 0px 5px 0px 5px;
+}
